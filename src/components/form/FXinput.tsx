@@ -39,8 +39,3 @@ const FXinput = ({ variant = "bordered", size = "md", required = false, type = "
 export default FXinput;
 
 
-// export default function FXinput(: IProps) {
-
-//     const { register } = useFormContext()
-//     return 
-// }

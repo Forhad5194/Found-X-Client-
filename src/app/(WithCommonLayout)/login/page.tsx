@@ -3,18 +3,19 @@
 /* eslint-disable react/jsx-sort-props */
 /* eslint-disable prettier/prettier */
 'use client';
+
 import { Button } from "@nextui-org/button";
-import Link from "next/link";
 import FXform from "@/src/components/form/FXform";
 import FXinput from "@/src/components/form/FXinput";
 import {zodResolver} from "@hookform/resolvers/zod";
 import { loginValidationSchema } from "@/src/schemas/login.schemas";
 import { FieldValue, FieldValues, SubmitHandler } from "react-hook-form";
+import Link from "next/link";
 
 const logInPgae = () => {
 
-    const onSubmit : SubmitHandler<FieldValues> = (data) => {
-       
+    const onSubmit :SubmitHandler<FieldValues>  = (data) => {
+       console.log(data)
     }
     return (
         <div className="flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center">
@@ -43,7 +44,7 @@ const logInPgae = () => {
 
 
                 <div className="text-center">
-                    Don&lsquo;t have account ? <Link href={"/register"}>Register</Link>
+                    Don&lsquo;t have account ? <Link href='/register'>Register</Link>
                 </div>
             </div>
 

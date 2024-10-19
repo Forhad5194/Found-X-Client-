@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-const AuthRouter = ["/login", 'register']
+const AuthRouter = ["/login", '/register']
 
 type Role = keyof typeof  roleBaseRouter;
 
