@@ -10,7 +10,8 @@ interface IProps {
     required?: boolean,
     type?: string,
     label?: string,
-    name: string,
+    name: string;
+   
 
 }
 

@@ -1,16 +1,54 @@
+"use client"
 import FXform from "@/src/components/form/FXform";
 import FXinput from "@/src/components/form/FXinput";
+import { useUserRegistration } from "@/src/hooks/auth.hooks";
+import { registerUser } from "@/src/services/authService";
 import { Button } from "@nextui-org/button";
+import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
+import { FieldValues, SubmitHandler } from "react-hook-form";
+import Swal from "sweetalert2";
 
 
 const registerPage = () => {
+
+
+  const {mutate:  handleRegister} = useUserRegistration()
+
+    
+
+
+
+  const onSubmit :SubmitHandler<FieldValues>  = (data) => {
+     const userData = {
+          ...data, 
+          profilePhoto: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+     }
+
+    console.log("User is registered", userData)
+    
+    handleRegister(userData)
+ }
+
+
+
+
+
     return (
         <div className="flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center">
             <h3 className="my-2 text-xl font-bold">Register with FoundX</h3>
-      <p className="mb-4">Help Lost Items Find Their Way Home</p>
-      <div className="w-[35%]">
-        <FXform>
+           <p className="mb-4">Help Lost Items Find Their Way Home</p>
+             <div className="w-[35%]">
+        <FXform 
+        
+        
+        onSubmit={onSubmit}
+        
+        //! Only for development
+        
+        
+        
+        >
          
         
           <div className="py-3">
