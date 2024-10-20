@@ -1,7 +1,7 @@
 "use client"
 import FXform from "@/src/components/form/FXform";
 import FXinput from "@/src/components/form/FXinput";
-import { useUserRegistration } from "@/src/hooks/auth.hooks";
+import { useUserRegistration } from "@/src/hooks/auth";
 import { registerUser } from "@/src/services/authService";
 import { Button } from "@nextui-org/button";
 import { useMutation } from "@tanstack/react-query";

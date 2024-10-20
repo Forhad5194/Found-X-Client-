@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { getCurrentUser } from './hooks/auth.jwt';
 
 const AuthRouter = ["/login", '/register']
 
@@ -10,18 +11,13 @@ const roleBaseRouter = {
     ADMIN: [/^\/admin/],
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
 
     const { pathname } = request.nextUrl;
 
+    const user = await getCurrentUser()
 
-
-    // const user = {
-    //     name: 'hossain',
-    //     token: "xc nvcvxlc l;m;m;mxm cvlnm ",
-    //     role: "USER",
-    // }
-    const user = undefined;
+   
 
 
     if (!user) {
@@ -44,5 +40,5 @@ export function middleware(request: NextRequest) {
 
 // See "Matching Paths" below to learn more
 export const config = {
-    matcher: ['/profile', '/admin','/login', '/register'],
+    matcher: ['/profile', '/profile/:page*',  '/admin','/login', '/register'],
 }

@@ -9,15 +9,24 @@ import FXform from "@/src/components/form/FXform";
 import FXinput from "@/src/components/form/FXinput";
 import {zodResolver} from "@hookform/resolvers/zod";
 import { loginValidationSchema } from "@/src/schemas/login.schemas";
-import { FieldValue, FieldValues, SubmitHandler } from "react-hook-form";
+import {  FieldValues, SubmitHandler } from "react-hook-form";
 import Link from "next/link";
+import { useUserLogin } from "@/src/hooks/auth";
+import { Spinner } from "@nextui-org/spinner";
+import Loading from "@/src/components/ul/Loading";
 
 const logInPgae = () => {
 
+    const {mutate : handleUserLogin , isPending} = useUserLogin()
+
     const onSubmit :SubmitHandler<FieldValues>  = (data) => {
-       console.log(data)
+       handleUserLogin(data)
     }
     return (
+       <>
+        {
+            isPending && <Loading />
+        }
         <div className="flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center">
             <h3 className="my-2 text-2xl font-bold">Login with FoundX</h3>
             <p className="mb-4">Welcome Back! Let&lsquo;s Get Started</p>
@@ -50,6 +59,7 @@ const logInPgae = () => {
 
 
         </div>
+       </>
     );
 };
 
