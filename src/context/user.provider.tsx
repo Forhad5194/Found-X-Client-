@@ -8,7 +8,7 @@ import { getCurrentUser } from "../hooks/auth.jwt";
 
 const UserContext = createContext<IUserProviderValues | undefined>(undefined)
 
-console.log(UserContext)
+
 
 interface IUserProviderValues {
     user: IUser | null;
