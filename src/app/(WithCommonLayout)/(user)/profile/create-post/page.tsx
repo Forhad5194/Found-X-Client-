@@ -11,6 +11,7 @@ import {
   useForm,
 } from "react-hook-form";
 import FXinput from "@/src/components/form/FXinput";
+import FXdatePicker from "@/src/components/form/FXdatePicker";
 
 export default function page() {
   const methods = useForm();
@@ -36,8 +37,10 @@ export default function page() {
   };
 
   return ( 
-    <div className="h-full rounded-xl bg-gradient-to-b from-default-100 px-[73px] py-12">
-       <h2 className="text-2xl flex justify-center mb-5">Post a found item. </h2>
+     <>
+     
+     <div className="h-full rounded-xl bg-gradient-to-b from-default-100 px-[73px] py-12">
+       <h2 className="text-2xl flex justify-center mb-5">Post a found item . </h2>
        <Divider className="mb-5" />
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -46,7 +49,7 @@ export default function page() {
               <FXinput  name="title" label="Title" />
             </div>
             <div className="min-w-fit flex-1">
-              <FXinput  name="found" label="Found On" />
+              <FXdatePicker label="Found Date" name="dateFound" />
             </div>
           </div>
           <div className="flex flex-wrap gap-2 py-2">
@@ -86,5 +89,9 @@ export default function page() {
         </form>
       </FormProvider>
     </div>
+     
+     
+     
+     </>
   );
 }

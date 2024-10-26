@@ -1,19 +1,11 @@
 "use client"
+import { IInput} from "@/src/types";
 /* eslint-disable react/jsx-sort-props */
 /* eslint-disable padding-line-between-statements */
 /* eslint-disable prettier/prettier */
 import { Input } from "@nextui-org/input";
 import { useFormContext } from "react-hook-form";
-interface IProps {
-    variant?: "flat" | "bordered" | "faded" | "underlined"
-    size?: "sm" | "md" | "lg",
-    required?: boolean,
-    type?: string,
-    label?: string,
-    name: string;
-   
-
-}
+interface IProps extends IInput {}
 
 
 
