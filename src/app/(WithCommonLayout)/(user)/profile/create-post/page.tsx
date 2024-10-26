@@ -35,11 +35,36 @@ export default function page() {
     append({ name: "questions" });
   };
 
-  return (
-    <div>
+  return ( 
+    <div className="h-full rounded-xl bg-gradient-to-b from-default-100 px-[73px] py-12">
+       <h2 className="text-2xl flex justify-center mb-5">Post a found item. </h2>
+       <Divider className="mb-5" />
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <FXinput name="title" label="Title" />
+          <div className="flex flex-wrap gap-2 py-2">
+            <div className="min-w-fit flex-1">
+              <FXinput  name="title" label="Title" />
+            </div>
+            <div className="min-w-fit flex-1">
+              <FXinput  name="found" label="Found On" />
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 py-2">
+            <div className="min-w-fit flex-1">
+              <FXinput  name="loction" label="Location" />
+            </div>
+            <div className="min-w-fit flex-1">
+              <FXinput  name="city" label="City" />
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 py-2">
+            <div className="min-w-fit flex-1">
+              <FXinput  name="category" label="Category" />
+            </div>
+            <div className="min-w-fit flex-1">
+              <FXinput  name="date" label="Date" />
+            </div>
+          </div>
 
           <Divider className="my-5" />
 
