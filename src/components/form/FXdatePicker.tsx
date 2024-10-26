@@ -13,7 +13,7 @@ const FXdatePicker = ({ label, name }: IProps) => {
             render={({ field: { value, ...fields } }) => (
                 <DatePicker
                     label={label}
-                    className="max-w-[284px]"
+                    className="max-w-[340px]"
                     {...fields} // Spread the rest of the field properties
                 />
             )}
